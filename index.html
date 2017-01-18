@@ -1,0 +1,462 @@
+<!DOCTYPE html>
+<html >
+
+<head>
+	<meta charset="UTF-8">
+	<title>HPC - Vincenzo Cimino</title>
+	<meta name="author" content="Vincenzo Cimino" />
+	<link rel="stylesheet" type="text/css" href="./jquery.fullPage.css" />
+	<!--<link rel="stylesheet" type="text/css" href="https://cdn.bootcss.com/spectre.css/0.1.29/spectre.min.css" />
+	<link rel="stylesheet" type="text/css" href="./main.css" />
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.9.1/jquery-ui.min.js"></script>-->
+
+	<link rel="stylesheet" type="text/css" href="./css/spectre.min.css" />
+	<link rel="stylesheet" type="text/css" href="./css/main.css" />
+	<script src="./js/jquery.min.js"></script>
+	<script src="./js/jquery-ui.min.js"></script>
+	<script type="text/javascript" src="./js/scrolloverflow.min.js"></script>
+	<script type="text/javascript" src="./js/jquery.fullPage.js"></script>
+	<script src="./js/jquery.viewport.mini.js" type="text/javascript"></script>
+
+
+	<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				//menu:".menu",
+				anchors: ['Intro', 'Esperimento', 'Spiegazione','Comunicazioni','Grafici'],
+				//sectionsColor: ['#8FB98B', '#DE564B', '#EAE1C0'],
+				slidesNavigation: true,
+				navigation: true,
+				navigationPosition: 'right',
+				controlArrows: false,
+			});
+		});
+	</script>
+
+</head>
+<body>
+
+<div id="fullpage">
+	
+	<div class="section " id="section0">
+		<div class="intro">
+			<div class="container grid-960">
+			<div class="dropdown">
+				<!-- basic dropdown button -->
+				<a href="#" class="btn btn-link dropdown-toggle" tabindex="0">
+					It <img style="max-width:18px;" src="./img/it.png"><i class="icon-caret"></i>
+				</a>
+				<!-- menu component -->
+				<ul class="menu">
+					<li class="menu-item">
+						<a href="#It">Italian </a>
+					</li>
+					<li class="menu-item">
+						<a href="#En">English </a>
+					</li>
+				</ul>
+			</div>
+				<div class="intro text-center">
+					<h2>Cloud and High Performance Computing</h2>
+					<div class="bar"></div>
+				<h3>Vincenzo Cimino <small class="label">0649398</small></h3>
+				</div>
+			</div>
+		</div>
+		<div class="modal">
+		    <div class="modal-overlay"></div>
+		    <div class="modal-container">
+		        <div class="modal-body">
+		            <div class="content text-center">
+		                <h1 tkey="end">Fine</h1>
+		                <img width="320" height="210" src="./img/giphy.gif">
+		            </div>
+		        </div>
+		    </div>
+		</div>
+	</div>
+
+	<!--      INTRODUZIONE AL PROBLEMA      -->
+
+	<div class="section" id="section1">
+	    <div class="slide" id="slide1" data-anchor="slide1">
+			<div class="intro">
+				<h2 class="card-title" tkey="fnCont">Funzione di continuità</h2>
+	    		<div class="container grid-960">
+				    <div class="columns">
+				    	<div class="column col-2"></div>
+				        <div class="column col-6">
+				        	<img style="width:100%;" src="./img/continuity.png">
+				        </div>
+				        <div class="column col-4">
+							<h3><b>&rho;</b> = <span tkey="den">Densità</span></h3>
+	    					<h3><b>&nu;</b> = <span tkey="vel">Velocità</span></h3>
+				        </div>
+				    </div>
+				</div>
+			</div>
+		</div>
+
+		<div class="slide" id="slide2" data-anchor="slide2">
+			<div class="container grid-960">
+				    <div class="columns">
+				        <div class="column col-2 hide-lg"></div>
+				        <div class="column col-8 col-lg-12">
+						<h2 tkey="evoPulse">Evoluzione dell'impulso</h2>
+				        <div class="graph"></div>
+				        </div>
+				        <div class="column col-2 hide-lg"></div>
+				    </div>
+				</div>
+		</div>	
+		<div class="slide" id="slide4" data-anchor="slide4">
+			<h2 tkey="pulseShow">Rappresentazione dell'impulso</h2>
+			<h3 tkey="array">Array monodimensionale</h3>
+			<div class="container grid-960">
+				    <div class="columns">
+				        <div class="column col-9">
+				        	<img style="width:100%;" src="./img/hpc_pulse_2.png">
+				        </div>
+				        <div class="column col-3">
+							<h3><b>high</b> = 1.0 <br />
+	    					<b>low</b> = 0.1<br />
+	    					<b>&nu;</b> = 1.0<br />
+	    					<b>L</b> = 1.0<br />
+	    					<b>Ld0</b> = 0.01<br />
+							<b>Ld1</b> 0.11<br />
+	    					<b>T<sub>i</sub></b> = 0.0<br />
+	    					<b>T<sub>f</sub></b> = 0.9</h3>
+				        </div>
+				    </div>
+				</div>
+			
+		</div>
+		<div class="slide" id="slide5" data-anchor="slide5">
+			<h2 tkey="diffMethod">Metodo delle differenze finite</h2>
+			<h2><i class="label"><b>dn[j] = d0[j]-cc*(d0[j]-d0[j-1])</b></i></h2>
+			<h3><i>cc = v0*(dt/dx)<br /> dx = L/(n-1)<br /> dt = cn/(n-1)</i></h3>
+		</div>
+		<!--<div class="slide" id="slide6" data-anchor="slide6">
+			<h2>Struttura dati utilizzata</h2>
+			<h3>Array unidimensionale</h3>
+			<img src="./img/hpc_array.png">
+		</div>
+		-->
+	</div>
+
+	<!--      DA SERIALE AD MPI      -->
+
+	<div class="section" id="section2">
+		<div class="slide" id="slide1" data-anchor="slide1">
+			<h3 tkey="serTime">Tempi del programma seriale (ser_cont_sx)</h3>
+			<div class="container grid-960">
+			<div class="graphbar" id="bar-chartser"></div>
+			</div>
+		</div>
+		<div class="slide" id="slide2" data-anchor="slide2">
+			<div class="intro">
+				<div class="columns">
+					<div class="column col-2 hide-lg"></div>
+					<div class="column col-8 col-lg-12">
+					<h2 tkey="highComp">Calcolo intensivo!</h2>
+					<pre class="text-left code lang-c">
+t = 0.0;
+<span class="comment" tkey="compStart">// Qui inizia il calcolo intensivo</span>
+do {
+	t += dt;
+	<span class="comment" tkey="everyTime">// Ad ogni passo temporale</span>
+	d0[0] = d0[1];
+	<span class="comment" tkey="doOp">// Effettuo tante azioni quanti sono i punti</span>
+	<b class="label">for (j = 1; j < n; j++) {<br/>
+		&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;dn[j] = d0[j] - cc * (d0[j] - d0[j - 1]);<br/>
+	&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;}</b>
+	for (i = 1; i < n; i++) {
+	&emsp;&emsp;&emsp;d0[i] = dn[i];
+	}
+} while (t&lt;T1);
+					</pre>
+					<h3 tkey="isPossible">E' possibile <u>parallelizzarlo</u>?</h3>
+					</div>
+					<div class="column col-2 hide-lg"></div>
+				</div>
+			</div>
+		</div>
+		<div class="slide" id="slide3" data-anchor="slide3">
+			<h2 tkey="solution">Soluzione:</h2>
+			<h1>MPI</h1>
+		</div>
+		<div class="slide hpc_array" id="slide4" data-anchor="slide4">
+			<h3 tkey="domain">Suddivisione del dominio</h3>
+			<img style="width:100%" src="./img/hpc_array.png">
+		</div>
+	</div>
+
+	<!--      SEZIONE RELATIVA ALLA COMUNICAZIONE      -->
+
+	<div class="section" id="section3">
+		<div class="slide" id="slide1" data-anchor="slide1">
+			<h2 tkey="edgeCom">Condizione ai bordi e Comunicazioni</h2>
+		</div>
+		<div class="slide hpc_mpi" id="slide2" data-anchor="slide2">
+			<h2>Mpi_Cont_Sx</h2>
+			<h4 tkey="comSx">Comunicazioni da sinistra a destra</h4>
+			<img style="width:100%;" src="./img/hpc_mpi.png">
+		</div>
+		<div class="slide" id="slide3" data-anchor="slide3">
+			<h2>Mpi_Cont_Dx</h2>
+			<h4 tkey="comDx">Comunicazioni da destra a sinistra</h4>
+			<img style="width:100%;" src="./img/hpc_mpidx.png">
+		</div>
+		<div class="slide" id="slide4" data-anchor="slide4">
+			<h2>Mpi_Cont_Sim</h2>
+			<h4 tkey="comSim">Comunicazioni simmetrica</h4>
+			<img style="width:100%;" src="./img/hpc_mpisim.png">
+		</div>
+	</div>
+
+	<!--      SEZIONE DEI GRAFICI DEI TEMPI      -->
+
+	<div class="section" id="section3">
+		<div class="slide" id="slide1" data-anchor="slide1">
+			<h2 tkey="exeTime">Tempo di esecuzione</h2>
+			<h4 tkey="exeCmp">Confronto tra applicativi</h4>
+			<div class="container grid-960">
+			<div class="form-group">
+		        <label class="form-switch" id="barSerMpiCheck">
+		            <input type="checkbox" />
+		            <i class="form-icon"></i> Grafico completo
+		        </label>
+		    </div>
+			<div id="bar-sermpi"></div>
+			</div>
+		</div>
+		<div class="slide" id="slide2" data-anchor="slide2">
+			<h2 tkey="exeTime">Tempo di esecuzione</h2>
+			<h4 tkey="more">Nel dettaglio</h4>
+			<div class="container grid-960">
+				<div class="columns">
+				<div class="column col-3"></div>
+				<div class="column col-6">
+				<ul class="tab tab-block" id="tabTimeExe">
+				    <li class="tab-item active">
+				        <a href="#">2Task</a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#">4Task</a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#">8Task</a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#">16Task</a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#" tkey="avg">Medie</a>
+				    </li>
+				</ul>
+				</div>
+				<div class="column col-3"></div>
+				</div>
+			</div>
+			<div class="container grid-960">
+			<div id="bar-timeexe"></div>
+			</div>
+		</div>
+		<div class="slide" id="slide3" data-anchor="slide3">
+			<h2 class="tooltip" data-tooltip="S = Tseq/Tpar  (S &le; numTasks)">SpeedUp</h2>
+			<h4>S = Tseq/Tpar  (S&le;numTasks)</h4>
+			<div class="container grid-960">
+				<div class="columns">
+				<div class="column col-3"></div>
+				<div class="column col-6">
+				<ul class="tab tab-block" id="tabSpeedUp">
+				    <li class="tab-item active">
+				        <a href="#">MpiContSx</a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#">MpiContDx</a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#">MpiContSim</a>
+				    </li>
+				</ul>
+				</div>
+				<div class="column col-3"></div>
+				</div>
+			</div>
+			<div class="container grid-960">
+			<div id="bar-speedup"></div>
+			</div>
+		</div>
+		<div class="slide" id="slide4" data-anchor="slide4">
+			<h2 class="tooltip" data-tooltip="&#951 = S/nTasks (&#951 &le; 1)" tkey="eff">Efficienza</h2>
+            <h4>&#951 = S/nTasks (&#951&le;1)</h4>
+			<div class="container grid-960">
+				<div class="columns">
+				<div class="column col-3"></div>
+				<div class="column col-6">
+				<ul class="tab tab-block" id="tabEff">
+				    <li class="tab-item active">
+				        <a href="#">MpiContSx</a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#">MpiContDx</a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#">MpiContSim</a>
+				    </li>
+				</ul>
+				</div>
+				<div class="column col-3"></div>
+				</div>
+			</div>
+			<div class="container grid-960">
+			<div id="bar-eff"></div>
+			</div>
+		</div>
+		<div class="slide" id="slide5" data-anchor="slide5">
+			<h2 tkey="overhead">Tempo di overhead</h2>
+			<div class="container grid-960">
+			<div id="bar-overhead"  style="width: 900px; height: 500px;"></div>
+			</div>
+		</div>
+		<div class="slide" id="slide6" data-anchor="slide6">
+			<h2 tkey="comTime">Tempo di comunicazione</h2>
+			<h4 tkey="comTxt">Quantità di tempo necessario a coordinare la parallelizzazione. <br />( Comunicazioni + Sincronizzazione )</h4>
+			<div class="container grid-960">
+				<div class="columns">
+				<div class="column col-3"></div>
+				<div class="column col-6">
+				<ul class="tab tab-block" id="tabTimeCom">
+				    <li class="tab-item active">
+				        <a href="#">2Task</a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#">4Task</a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#">8Task</a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#">16Task</a>
+				    </li>
+				    <li class="tab-item">
+				        <a href="#" tkey="avg">Medie</a>
+				    </li>
+				</ul>
+				</div>
+				<div class="column col-3"></div>
+				</div>
+			</div>
+			<div class="container grid-960">
+			<div id="bar-timecom"></div>
+			</div>
+		</div>
+		<div class="slide" id="slide7" data-anchor="slide7">
+			<h2 tkey="comNum">Numero di comunicazioni</h2>
+			<h4 tkey="eachTask">Per singolo task</h4>
+			<div class="container grid-960">
+			<table class="table table-striped table-hover">
+			    <thead>
+			        <tr>
+			            <th tkey="pointsNum">Numero di Punti</th>
+			            <th>Mpi Cont SX</th>
+			            <th>Mpi Cont DX</th>
+			            <th>Mpi Cont SIM</th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr>
+			            <td><b>20.000</b></td>
+			            <td><span tkey="about">circa</span> 90.000</td>
+			            <td><span tkey="about">circa</span> 90.000</td>
+			            <td><span tkey="about">circa</span> 180.000</td>
+			        </tr>
+			        <tr>
+			            <td><b>40.000</b></td>
+			            <td><span tkey="about">circa</span> 180.000</td>
+			            <td><span tkey="about">circa</span> 180.000</td>
+			            <td><span tkey="about">circa</span> 360.000</td>
+			        </tr>
+			        <tr>
+			            <td><b>80.000</b></td>
+			            <td><span tkey="about">circa</span> 360.000</td>
+			            <td><span tkey="about">circa</span> 360.000</td>
+			            <td><span tkey="about">circa</span> 720.000</td>
+			        </tr>
+			    </tbody>
+			</table>
+			</div>
+		</div>
+		<div class="slide" id="slide8" data-anchor="slide8">
+			<h2 tkey="comTime">Tempo di comunicazione</h2>
+			<h4 tkey="perApp">Per applicativo</h4>
+			<div class="container grid-960">
+			<table class="table table-striped table-hover">
+			    <thead>
+			        <tr>
+			            <th tkey="app">Applicativo</th>
+			            <th>20.000 <span tkey="p">punti</span></th>
+			            <th>40.000 <span tkey="p">punti</span></th>
+			            <th>80.000 <span tkey="p">punti</span></th>
+			        </tr>
+			    </thead>
+			    <tbody>
+			        <tr class="selected">
+			            <td><b>MPI SX/DX (2Task)</b></td>
+			            <td>2,7&micro;s</td>
+			            <td>5&micro;s</td>
+			            <td>7&micro;s</td>
+			        </tr>
+			        <tr>
+			            <td><b>MPI SX/DX (4Task)</b></td>
+			            <td>4&micro;s</td>
+			            <td>6&micro;s</td>
+			            <td>10&micro;s</td>
+			        </tr>
+			        <tr>
+			            <td><b>MPI SX/DX (8Task)</b></td>
+			            <td>11&micro;s</td>
+			            <td>22&micro;s</td>
+			            <td>44&micro;s</td>
+			        </tr>
+			        <tr class="selected">
+			            <td><b>MPI SIM (2Task)</b></td>
+			            <td>2,7&micro;s</td>
+			            <td>4,7&micro;s</td>
+			            <td>7,6&micro;s</td>
+			        </tr>
+			        <tr>
+			            <td><b>MPI SIM (4Task)</b></td>
+			            <td>3,8&micro;s</td>
+			            <td>7,5&micro;s</td>
+			            <td>11&micro;s</td>
+			        </tr>
+			        <tr>
+			            <td><b>MPI SIM (8Task)</b></td>
+			            <td>7,7&micro;s</td>
+			            <td>13&micro;s</td>
+			            <td>27&micro;s</td>
+			        </tr>
+			    </tbody>
+			</table>
+			</div>
+		</div>
+		<div class="slide" id="slide9" data-anchor="slide9">
+			<h2 tkey="singleCom">Singola comunicazione</h2>
+			<h4 tkey="singleComTxt">stimata in base ai rilevamenti</h4>
+			<h1 class="last">com = 5&micro;s <small class="label">&plusmn; 2&micro;s</small></h1>
+		</div>
+	</div>
+</div>
+
+<!--<script type="text/javascript" src="https://cdn.jsdelivr.net/kute.js/1.6.0/kute.min.js"></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/kute.js/1.6.0/kute-svg.min.js"></script>
+<script type="text/javascript" src="https://www.google.com/jsapi"></script>-->
+<script type="text/javascript" src="./js/kute.min.js"></script>
+<script type="text/javascript" src="./js/kute-svg.min.js"></script>
+<script type="text/javascript" src="./js/jsapi.js"></script>
+<script type="text/javascript" src="./js/examples.js"></script>
+</body>
+</html>
