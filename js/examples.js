@@ -51,7 +51,7 @@ var it={
 	comDx: "Comunicazioni da destra a sinistra",
 	comSim: "Comunicazioni simmetrica",
 	exeTime: "Tempo di esecuzione",
-	exeCmp: "Confronto tra applicativi",
+	exeCmp: "Confronto tra sequenziale e parallelo",
   graphC: "Grafico completo",
 	more: "Nel dettaglio",
 	avg: "Medie",
@@ -108,7 +108,7 @@ var en={
 	comDx: "Right to Left Communications",
 	comSim: "Symmetric Communications",
 	exeTime: "Execution time",
-	exeCmp: "Comparison of processes",
+	exeCmp: "Comparison between sequential and parallel",
   graphC: "Complete graph",
 	more: "In detail",
 	avg: "Average",
@@ -284,9 +284,9 @@ var barTimeExe16Task =
   	['80.000 '+lang_now.p, 36.1, 36.9, 0]];
 var barTimeExeMedie = 
   	[[lang_now.numP, '2 Task', '4 Task', '8 Task', '16 Task'], 
-  	['20.000 '+lang_now.p, 0.33, 0.47, 1.2, 2.194], 
-  	['40.000 '+lang_now.p, 1.23, 1.52, 4.4, 7.534], 
-  	['80.000 '+lang_now.p, 3.66, 5.41, 17.16, 27.563]];
+  	['20.000 '+lang_now.p, 5, 2.8, 2.3, 2.75], 
+  	['40.000 '+lang_now.p, 20, 10.9, 9.1, 9.75], 
+  	['80.000 '+lang_now.p, 79.1, 43.1, 36, 36.5]];
     var optionsTimeExe = {
     annotations: {
 	    textStyle: {
