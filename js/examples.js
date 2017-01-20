@@ -283,10 +283,10 @@ var barTimeExe16Task =
   	['40.000 '+lang_now.p, 9.7, 9.8, 0], 
   	['80.000 '+lang_now.p, 36.1, 36.9, 0]];
 var barTimeExeMedie = 
-  	[[lang_now.numP, '2 Task', '4 Task', '8 Task', '16 Task'], 
-  	['20.000 '+lang_now.p, 5, 2.8, 2.3, 2.75], 
-  	['40.000 '+lang_now.p, 20, 10.9, 9.1, 9.75], 
-  	['80.000 '+lang_now.p, 79.1, 43.1, 36, 36.5]];
+  	[[lang_now.numP, lang_now.seq, '2 Task', '4 Task', '8 Task', '16 Task'], 
+  	['20.000 '+lang_now.p, 9.5, 5, 2.8, 2.3, 2.75], 
+  	['40.000 '+lang_now.p, 38.6, 20, 10.9, 9.1, 9.75], 
+  	['80.000 '+lang_now.p, 155.3, 79.1, 43.1, 36, 36.5]];
     var optionsTimeExe = {
     annotations: {
 	    textStyle: {
@@ -313,7 +313,7 @@ var barTimeExeMedie =
 	pointSize: 5,
   	focusTarget: 'category',
     //title: 'Comunicazioni per Task',
-    colors: ['#5a5', '#48c', '#c66','#ff6038'],
+    colors: ['#555','#5a5', '#48c', '#c66','#ff6038'],
     legend: { position: 'bottom', maxLines: 2 },
     vAxis: {
       /*minValue: 0,*/
