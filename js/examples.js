@@ -313,7 +313,7 @@ var barTimeExeMedie =
 	pointSize: 5,
   	focusTarget: 'category',
     //title: 'Comunicazioni per Task',
-    colors: ['#555','#5a5', '#48c', '#c66','#ff6038'],
+    colors: ['#5a5', '#48c', '#c66','#ff6038'],
     legend: { position: 'bottom', maxLines: 2 },
     vAxis: {
       /*minValue: 0,*/
@@ -684,11 +684,17 @@ $(document).ready(function(){
 			tab='Medie';
 			//chartId='bar-timeexeaverage';
 		}
+    if(tab=='Medie' && id.trim()=='TimeExe')
+      optionsTimeExe.colors= ['#555','#5a5', '#48c', '#c66','#ff6038'];
+    else
+      optionsTimeExe.colors= ['#5a5', '#48c', '#c66','#ff6038'];
+
+    console.log(chartId);
 		if(tab=='Medie' || id.trim()=='TimeExe' || id.trim()=='TimeCom')
 			var chart = new google.visualization.ColumnChart(document.getElementById(chartId));
   		else
 			var chart = new google.visualization.LineChart(document.getElementById(chartId));
-  		chart.draw(google.visualization.arrayToDataTable(eval('bar'+id+tab)), eval('options'+id));
+  	chart.draw(google.visualization.arrayToDataTable(eval('bar'+id+tab)), eval('options'+id));
 	});
 
 	$('.last').on('click',function(e){
