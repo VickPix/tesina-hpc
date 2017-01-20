@@ -689,7 +689,7 @@ $(document).ready(function(){
     else
       optionsTimeExe.colors= ['#5a5', '#48c', '#c66','#ff6038'];
 
-    console.log(chartId);
+    //console.log(chartId);
 		if(tab=='Medie' || id.trim()=='TimeExe' || id.trim()=='TimeCom')
 			var chart = new google.visualization.ColumnChart(document.getElementById(chartId));
   		else
